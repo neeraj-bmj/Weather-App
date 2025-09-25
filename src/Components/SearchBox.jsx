@@ -4,8 +4,8 @@ const SearchBox = ({ updateInformation }) => {
   let [city, setcity] = useState("");
   let [ERR, serERR] = useState(false);
 
-  const API_URL = import.meta.env.VITE_BASE_URL;
-  const APT_KEY = import.meta.env.VITE_API_KEY;
+  const API_URL = import.meta.env.VITE_BASE_URL || "https://api.openweathermap.org/data/2.5/weather";
+  const APT_KEY = import.meta.env.VITE_API_KEY || "7e80a94afdf5b8bc93a201bf01938431";
 
   let getWeatherInformation = async (city) => {
     if (!city) throw new Error("City name is required");
